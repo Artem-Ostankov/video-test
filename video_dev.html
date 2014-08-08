@@ -1,0 +1,66 @@
+<head>
+  <title>Leaderboard</title>
+  <script>
+    videojs.options.flash.swf = "video-js.swf";
+  </script>
+</head>
+
+<body>
+
+  <div id="dummy_video_test">
+    {{> dummy_videos_templ}}
+  </div>
+</body>
+
+
+<template name="dummy_videos_templ">
+ <div class="leaderboard">
+    {{#each videos}}
+      {{> dummy_video_feed}}
+    {{/each}}
+  </div>
+
+  {{#if selected_name}}
+  <div class="details">
+    <div class="name">{{selected_name}}</div>
+    <input type="button" class="inc" value="Give 5 points" />
+  </div>
+  {{else}}
+  <div class="none">Click a video to select</div>
+  {{/if}}
+</template>
+
+<template name="dummy_video_feed">
+  <div id="video_test">
+    <video id="example_video_1" class="video-js vjs-default-skin" controls preload="none" width="640" height="264"
+        data-setup="{}">
+      <source src="{{url}}" type='video/mp4' />
+      <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+    </video>
+  </div>
+</template>
+
+<template name="videos_templ">
+  <div class="leaderboard">
+    {{#each videos}}
+      {{> video_feed}}
+    {{/each}}
+  </div>
+
+  {{#if selected_name}}
+  <div class="details">
+    <div class="name">{{selected_name}}</div>
+    <input type="button" class="inc" value="Give 5 points" />
+  </div>
+  {{else}}
+  <div class="none">Click a video to select</div>
+  {{/if}}
+</template>
+
+<template name="video_feed">
+  <div class="player {{selected}}">
+    <span class="name">{{title}}</span>
+    <span class="score">{{url}}</span>
+  </div>
+</template>
+
