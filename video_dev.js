@@ -34,9 +34,9 @@ if (Meteor.isClient) {
 if (Meteor.isServer) {
   Meteor.startup(function () {
     if (Videos.find().count() === 0) {
-      Videos.insert({ url: "http://video-js.zencoder.com/oceans-clip.mp4", title: "Ocean"});
-      Videos.insert({ url: "http://video-js.zencoder.com/big_buck_bunny.mp4", title: "Big Bunny"});
-      Videos.insert({ url: "http://video-js.zencoder.com/sintel.mp4", title: "Sintel"});
+      Videos.insert({ url: "http://video-js.zencoder.com/oceans-clip.mp4", title: "Ocean", status: "closed"});
+      Videos.insert({ url: "http://video-js.zencoder.com/big_buck_bunny.mp4", title: "Big Bunny", status : "betted"});
+      Videos.insert({ url: "http://video-js.zencoder.com/sintel.mp4", title: "Sintel", status: "open"});
     }
   });
 }

@@ -1,0 +1,16 @@
+
+.video_title {
+	padding: 5px;
+}
+
+.video_title.open {
+	background-color: green;
+}
+
+.video_title.betted {
+	background-color: yellow;
+}
+
+.video_title.closed {
+	background-color: red;
+}
